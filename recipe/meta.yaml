@@ -6,17 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/transformations-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/transformations-{{ version }}.tar.gz
   sha256: 9141233392e768eb224b73059b60f19df748bb69493dfd16db7cac9f6e93a4ba
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 3
   skip: true  # [py<38]
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - numpy
     - pip
