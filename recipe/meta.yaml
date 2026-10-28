@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/transformations-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/transformations-{{ version }}.tar.gz
   sha256: 3cee34be6fbd53ef8767951ee783f61567a6eb7603cec99e97beb29211f58d40
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   skip: true  # [py<312]
 
 requirements:
